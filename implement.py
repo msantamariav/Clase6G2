@@ -22,7 +22,9 @@ def main():
                 tipo=input("Ingrese el tipo de mascota (felino o canino): ")
                 peso=int(input("Ingrese el peso de la mascota: "))
                 fecha=input("Ingrese la fecha de ingreso (dia/mes/año): ")
-                medicamento=input("Ingrese nombre del medicamento: ")
+                medicamento=Medicamento()
+                medicamento.asignarNombre(input("Ingrese nombre del medicamento: "))
+                medicamento.asignarDosis(int(input("Ingrese dosis del medicamento: ")))
                 mas = Mascota()
                 mas.asignarNombre(nombre)
                 mas.asignarHistoria(historia)
@@ -52,7 +54,7 @@ def main():
             q = int(input("Ingrese la historia clínica de la mascota: "))
             medicamento=servicio_hospitalario.verMedicamento(q)
             if medicamento != None: 
-                print(f"El medicamento suministrado es: {medicamento}")
+                print(f"El medicamento suministrado es: {medicamento.verNombre()} con dosis {medicamento.verDosis()}")
             else:
                 print("La historia clínica ingresada no corresponde con ninguna mascota en el sistema.")
 

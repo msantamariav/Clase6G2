@@ -75,3 +75,20 @@ class sistemaV:
                 self.__lista_mascotas.remove(masc)  #opcion con el pop
                 return True  #eliminado con exito
         return False 
+
+
+class Medicamento:
+    def __init__(self):
+        self.__nombre = "" 
+        self.__dosis = 0 
+    
+    def verNombre(self):
+        return self.__nombre 
+    def verDosis(self):
+        return self.__dosis 
+    
+    def asignarNombre(self,med):
+        self.__nombre = med 
+    def asignarDosis(self,med):
+        self.__dosis = med 
+        
