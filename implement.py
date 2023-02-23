@@ -1,4 +1,5 @@
 from sistemaVet import *
+import datetime
 
 def main():
     servicio_hospitalario = sistemaV()
@@ -11,7 +12,7 @@ def main():
                        \n5- Eliminar mascota 
                        \n6- Salir 
                        \nUsted ingresó la opción: ''' ))
-
+        
         if menu == 1:
             if servicio_hospitalario.verNumeroMascotas() >= 10:
                 print("No hay espacio dispnible...")
@@ -42,7 +43,7 @@ def main():
             q = int(input("Ingrese la historia clínica de la mascota: "))
             fecha = servicio_hospitalario.verFechaIngreso(q)
             if fecha != None:  
-                print("La fecha de ingreso de la mascota es: " + fecha)
+                print("La fecha de ingreso de la mascota es: " + datetime.fecha)
             else:
                 print("La historia clínica ingresada no corresponde con ninguna mascota en el sistema.")
           

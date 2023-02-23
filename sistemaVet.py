@@ -6,8 +6,8 @@ class Mascota:
         self.__tipo=" "
         self.__peso=" "
         self.__fecha_ingreso=" "
-        self.__medicamento=""
-
+        self.__medicamento= []
+    
     def verNombre(self):
         return self.__nombre
     def verHistoria(self):
@@ -35,10 +35,15 @@ class Mascota:
         self.__medicamento = n 
 
 
+
 class sistemaV:
     def __init__(self):
-        self.__lista_mascotas = []
-        # self.__lista_mascotas = {}
+        #self.__lista_mascotas = []
+        #self.__lista_mascotas= {}
+        if self.tipo == "felino":
+            self.__listafelinos = {}
+        else:
+            self.__listacaninos = {}
 
     def verificarExiste(self,historia):
         for m in self.__lista_mascotas:
@@ -51,8 +56,8 @@ class sistemaV:
         return len(self.__lista_mascotas) 
 
     def ingresarMascota(self,mascota):
-        self.__lista_mascotas.append(mascota) 
-        # self.__lista_mascotas[mascota.verHistoria()]=mascota
+        #self.__lista_mascotas.append(mascota) 
+        self.__lista_mascotas[mascota.verHistoria()]=mascota
 
     def verFechaIngreso(self,historia):
         #busco la mascota y devuelvo el atributo solicitado
@@ -74,8 +79,7 @@ class sistemaV:
                 # del self.__lista_mascotas[masc]
                 self.__lista_mascotas.remove(masc)  #opcion con el pop
                 return True  #eliminado con exito
-        return False 
-
+        return False
 
 class Medicamento:
     def __init__(self):
