@@ -50,7 +50,7 @@ def main():
         elif menu==3: # Ver número de mascotas en el servicio 
             numero=servicio_hospitalario.verNumeroMascotas()
             print("El número de pacientes en el sistema es: " + str(numero))
-
+#
         elif menu==4:
             q = int(input("Ingrese la historia clínica de la mascota: "))
             medicamento=servicio_hospitalario.verMedicamento(q)
